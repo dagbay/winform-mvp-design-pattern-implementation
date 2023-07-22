@@ -33,18 +33,29 @@ namespace CRUDWinFormsMVP.Views
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPagePetList = new System.Windows.Forms.TabPage();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnNew = new System.Windows.Forms.Button();
+            this.dgvPets = new System.Windows.Forms.DataGridView();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.lblSearchPet = new System.Windows.Forms.Label();
             this.tabPagePetDetail = new System.Windows.Forms.TabPage();
-            this.dgvPets = new System.Windows.Forms.DataGridView();
-            this.btnNew = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
+            this.lblPetID = new System.Windows.Forms.Label();
+            this.txtPetID = new System.Windows.Forms.TextBox();
+            this.txtPetName = new System.Windows.Forms.TextBox();
+            this.lblPetName = new System.Windows.Forms.Label();
+            this.txtPetColour = new System.Windows.Forms.TextBox();
+            this.lblPetColour = new System.Windows.Forms.Label();
+            this.txtPetType = new System.Windows.Forms.TextBox();
+            this.lblPetType = new System.Windows.Forms.Label();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPagePetList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPets)).BeginInit();
+            this.tabPagePetDetail.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblPets
@@ -95,6 +106,45 @@ namespace CRUDWinFormsMVP.Views
             this.tabPagePetList.Text = "Pet List";
             this.tabPagePetList.UseVisualStyleBackColor = true;
             // 
+            // btnDelete
+            // 
+            this.btnDelete.BackColor = System.Drawing.Color.White;
+            this.btnDelete.Location = new System.Drawing.Point(1083, 135);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(91, 26);
+            this.btnDelete.TabIndex = 6;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = false;
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.BackColor = System.Drawing.Color.White;
+            this.btnEdit.Location = new System.Drawing.Point(1083, 103);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(91, 26);
+            this.btnEdit.TabIndex = 5;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.UseVisualStyleBackColor = false;
+            // 
+            // btnNew
+            // 
+            this.btnNew.BackColor = System.Drawing.Color.White;
+            this.btnNew.Location = new System.Drawing.Point(1083, 71);
+            this.btnNew.Name = "btnNew";
+            this.btnNew.Size = new System.Drawing.Size(91, 26);
+            this.btnNew.TabIndex = 4;
+            this.btnNew.Text = "New";
+            this.btnNew.UseVisualStyleBackColor = false;
+            // 
+            // dgvPets
+            // 
+            this.dgvPets.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvPets.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPets.Location = new System.Drawing.Point(43, 71);
+            this.dgvPets.Name = "dgvPets";
+            this.dgvPets.Size = new System.Drawing.Size(1034, 525);
+            this.dgvPets.TabIndex = 3;
+            // 
             // btnSearch
             // 
             this.btnSearch.BackColor = System.Drawing.Color.White;
@@ -123,6 +173,16 @@ namespace CRUDWinFormsMVP.Views
             // 
             // tabPagePetDetail
             // 
+            this.tabPagePetDetail.Controls.Add(this.btnCancel);
+            this.tabPagePetDetail.Controls.Add(this.btnSave);
+            this.tabPagePetDetail.Controls.Add(this.txtPetType);
+            this.tabPagePetDetail.Controls.Add(this.lblPetType);
+            this.tabPagePetDetail.Controls.Add(this.txtPetColour);
+            this.tabPagePetDetail.Controls.Add(this.lblPetColour);
+            this.tabPagePetDetail.Controls.Add(this.txtPetName);
+            this.tabPagePetDetail.Controls.Add(this.lblPetName);
+            this.tabPagePetDetail.Controls.Add(this.txtPetID);
+            this.tabPagePetDetail.Controls.Add(this.lblPetID);
             this.tabPagePetDetail.Location = new System.Drawing.Point(4, 29);
             this.tabPagePetDetail.Name = "tabPagePetDetail";
             this.tabPagePetDetail.Padding = new System.Windows.Forms.Padding(3);
@@ -131,43 +191,93 @@ namespace CRUDWinFormsMVP.Views
             this.tabPagePetDetail.Text = "Pet Detail";
             this.tabPagePetDetail.UseVisualStyleBackColor = true;
             // 
-            // dgvPets
+            // lblPetID
             // 
-            this.dgvPets.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPets.Location = new System.Drawing.Point(43, 71);
-            this.dgvPets.Name = "dgvPets";
-            this.dgvPets.Size = new System.Drawing.Size(1034, 525);
-            this.dgvPets.TabIndex = 3;
+            this.lblPetID.AutoSize = true;
+            this.lblPetID.Location = new System.Drawing.Point(59, 45);
+            this.lblPetID.Name = "lblPetID";
+            this.lblPetID.Size = new System.Drawing.Size(58, 20);
+            this.lblPetID.TabIndex = 0;
+            this.lblPetID.Text = "Pet ID:";
             // 
-            // btnNew
+            // txtPetID
             // 
-            this.btnNew.BackColor = System.Drawing.Color.White;
-            this.btnNew.Location = new System.Drawing.Point(1083, 71);
-            this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(91, 26);
-            this.btnNew.TabIndex = 4;
-            this.btnNew.Text = "New";
-            this.btnNew.UseVisualStyleBackColor = false;
+            this.txtPetID.BackColor = System.Drawing.Color.White;
+            this.txtPetID.Location = new System.Drawing.Point(63, 68);
+            this.txtPetID.Name = "txtPetID";
+            this.txtPetID.Size = new System.Drawing.Size(172, 26);
+            this.txtPetID.TabIndex = 1;
             // 
-            // btnEdit
+            // txtPetName
             // 
-            this.btnEdit.BackColor = System.Drawing.Color.White;
-            this.btnEdit.Location = new System.Drawing.Point(1083, 103);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(91, 26);
-            this.btnEdit.TabIndex = 5;
-            this.btnEdit.Text = "Edit";
-            this.btnEdit.UseVisualStyleBackColor = false;
+            this.txtPetName.BackColor = System.Drawing.Color.White;
+            this.txtPetName.Location = new System.Drawing.Point(63, 139);
+            this.txtPetName.Name = "txtPetName";
+            this.txtPetName.Size = new System.Drawing.Size(172, 26);
+            this.txtPetName.TabIndex = 3;
             // 
-            // btnDelete
+            // lblPetName
             // 
-            this.btnDelete.BackColor = System.Drawing.Color.White;
-            this.btnDelete.Location = new System.Drawing.Point(1083, 135);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(91, 26);
-            this.btnDelete.TabIndex = 6;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = false;
+            this.lblPetName.AutoSize = true;
+            this.lblPetName.Location = new System.Drawing.Point(59, 116);
+            this.lblPetName.Name = "lblPetName";
+            this.lblPetName.Size = new System.Drawing.Size(83, 20);
+            this.lblPetName.TabIndex = 2;
+            this.lblPetName.Text = "Pet Name:";
+            // 
+            // txtPetColour
+            // 
+            this.txtPetColour.BackColor = System.Drawing.Color.White;
+            this.txtPetColour.Location = new System.Drawing.Point(63, 217);
+            this.txtPetColour.Name = "txtPetColour";
+            this.txtPetColour.Size = new System.Drawing.Size(362, 26);
+            this.txtPetColour.TabIndex = 7;
+            // 
+            // lblPetColour
+            // 
+            this.lblPetColour.AutoSize = true;
+            this.lblPetColour.Location = new System.Drawing.Point(59, 194);
+            this.lblPetColour.Name = "lblPetColour";
+            this.lblPetColour.Size = new System.Drawing.Size(87, 20);
+            this.lblPetColour.TabIndex = 6;
+            this.lblPetColour.Text = "Pet Colour:";
+            // 
+            // txtPetType
+            // 
+            this.txtPetType.BackColor = System.Drawing.Color.White;
+            this.txtPetType.Location = new System.Drawing.Point(253, 139);
+            this.txtPetType.Name = "txtPetType";
+            this.txtPetType.Size = new System.Drawing.Size(172, 26);
+            this.txtPetType.TabIndex = 9;
+            // 
+            // lblPetType
+            // 
+            this.lblPetType.AutoSize = true;
+            this.lblPetType.Location = new System.Drawing.Point(249, 116);
+            this.lblPetType.Name = "lblPetType";
+            this.lblPetType.Size = new System.Drawing.Size(75, 20);
+            this.lblPetType.TabIndex = 8;
+            this.lblPetType.Text = "Pet Type:";
+            // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.Color.White;
+            this.btnSave.Location = new System.Drawing.Point(63, 267);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(172, 39);
+            this.btnSave.TabIndex = 10;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = false;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.BackColor = System.Drawing.Color.White;
+            this.btnCancel.Location = new System.Drawing.Point(253, 267);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(172, 39);
+            this.btnCancel.TabIndex = 11;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = false;
             // 
             // PetView
             // 
@@ -186,6 +296,8 @@ namespace CRUDWinFormsMVP.Views
             this.tabPagePetList.ResumeLayout(false);
             this.tabPagePetList.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPets)).EndInit();
+            this.tabPagePetDetail.ResumeLayout(false);
+            this.tabPagePetDetail.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -204,5 +316,15 @@ namespace CRUDWinFormsMVP.Views
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnNew;
         private System.Windows.Forms.DataGridView dgvPets;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.TextBox txtPetType;
+        private System.Windows.Forms.Label lblPetType;
+        private System.Windows.Forms.TextBox txtPetColour;
+        private System.Windows.Forms.Label lblPetColour;
+        private System.Windows.Forms.TextBox txtPetName;
+        private System.Windows.Forms.Label lblPetName;
+        private System.Windows.Forms.TextBox txtPetID;
+        private System.Windows.Forms.Label lblPetID;
     }
 }

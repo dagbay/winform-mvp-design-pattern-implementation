@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CRUDWinFormsMVP
+namespace CRUDWinFormsMVP.Repository
 {
-    public class Class1
+    public abstract class BaseRepository
     {
+        protected string connectionString;
+        //...
     }
 }

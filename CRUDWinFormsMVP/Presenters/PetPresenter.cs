@@ -54,6 +54,7 @@ namespace CRUDWinFormsMVP.Presenters
             if (emptyValue == false)
             {
                 petList = repository.GetByValue(this.view.SearchValue);
+                petsBindingSource.DataSource = petList;
             }
             else
             {

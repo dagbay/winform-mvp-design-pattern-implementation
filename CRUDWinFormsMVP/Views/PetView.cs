@@ -12,11 +12,6 @@ namespace CRUDWinFormsMVP.Views
 {
     public partial class PetView : Form, IPetView
     {
-        private string petId;
-        private string petName;
-        private string petType;
-        private string petColour;
-        private string searchValue;
         private bool isEdit;
         private bool isSuccessful;
         private string message;
@@ -39,32 +34,32 @@ namespace CRUDWinFormsMVP.Views
 
         public string PetId 
         { 
-            get { return petId; } 
-            set { petId = value; } 
+            get { return txtPetID.Text; } 
+            set { txtPetID.Text = value; } 
         }
 
         public string PetName 
         { 
-            get { return petName; } 
-            set { petName = value; } 
+            get { return txtPetName.Text; } 
+            set { txtPetName.Text = value; } 
         }
 
         public string PetType 
         { 
-            get { return petType; } 
-            set { petType = value; } 
+            get { return txtPetType.Text; } 
+            set { txtPetType.Text = value; } 
         }
 
         public string PetColour 
         { 
-            get { return petColour; } 
-            set { petColour = value; } 
+            get { return txtPetColour.Text; } 
+            set { txtPetColour.Text = value; } 
         }
 
         public string SearchValue 
         { 
-            get { return searchValue; } 
-            set { searchValue = value; } 
+            get { return txtSearch.Text; } 
+            set { txtSearch.Text = value; } 
         }
 
         public bool IsEdit 

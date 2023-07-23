@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Presenters\MainPresenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Models\IPetRepository.cs" />
     <Compile Include="Models\PetModel.cs" />
@@ -60,7 +61,14 @@
     </Compile>
     <Compile Include="Repository\BaseRepository.cs" />
     <Compile Include="Repository\PetRepository.cs" />
+    <Compile Include="Views\IMainView.cs" />
     <Compile Include="Views\IPetView.cs" />
+    <Compile Include="Views\MainView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\MainView.Designer.cs">
+      <DependentUpon>MainView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\PetView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +77,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Views\MainView.resx">
+      <DependentUpon>MainView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\PetView.resx">
       <DependentUpon>PetView.cs</DependentUpon>
     </EmbeddedResource>

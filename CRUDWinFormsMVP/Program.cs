@@ -24,10 +24,8 @@ namespace CRUDWinFormsMVP
             Application.SetCompatibleTextRenderingDefault(false);
             string sqlConnectionString = ConfigurationManager.ConnectionStrings["PetConnectionString"].ConnectionString;
 
-            IPetView view = new PetView();
-            IPetRepository repository = new PetRepository(sqlConnectionString);
-
-            new PetPresenter(view, repository);
+            IMainView view = new MainView();
+            new MainPresenter(view, sqlConnectionString);
 
             Application.Run((Form)view);
         }

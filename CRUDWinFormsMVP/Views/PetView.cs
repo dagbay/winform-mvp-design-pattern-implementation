@@ -91,5 +91,21 @@ namespace CRUDWinFormsMVP.Views
         {
             dgvPets.DataSource = petList;
         }
+
+        // Singleton Pattern (Open a single form instance)
+        private static PetView instance;
+        public static PetView GetInstance()
+        {
+            if (instance == null || instance.IsDisposed)
+            {
+                instance = new PetView();
+            }
+            else
+            {
+                if (instance.WindowState == FormWindowState.Minimized) instance.WindowState = FormWindowState.Normal;
+                instance.BringToFront();
+            }
+            return instance;
+        }
     }
 }

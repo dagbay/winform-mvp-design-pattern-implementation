@@ -24,13 +24,13 @@ namespace CRUDWinFormsMVP.Presenters
             this.view = view;
             this.repository = repository;
 
-            // Subscribe Event Handler Methods to View Events
+            // Subscribe Event Handler Methods to View Events (PubSub Pattern)
             this.view.SearchEvent += SearchPet;
             this.view.AddNewEvent += AddPet;
             this.view.EditEvent += LoadSelectedPetToEdit;
             this.view.DeleteEvent += DeleteSelectedPet;
             this.view.SaveEvent += SavePet;
-            this.view.CancelEvent += CancelEvent;
+            this.view.CancelEvent += CancelAction;
 
             // Set Pets Binding Source
             this.view.SetPetListBindingSource(petsBindingSource);
@@ -62,29 +62,79 @@ namespace CRUDWinFormsMVP.Presenters
             }
         }
 
-        private void CancelEvent(object sender, EventArgs e)
+        private void CancelAction(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            CleanViewFields();
         }
 
         private void SavePet(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            var model = new PetModel();
+            model.Id = Convert.ToInt32(view.PetId);
+            model.Name = view.PetName;
+            model.Type = view.PetType;
+            model.Colour = view.PetColour;
+            try
+            {
+                new Common.ModelDataValidation().Validate(model);
+                if (view.IsEdit)
+                {
+                    repository.Edit(model);
+                    view.Message = "Pet successfully edited";
+                } else
+                {
+                    repository.Add(model);
+                    view.Message = "Pet successfully created";
+                }
+                view.IsSuccessful = true;
+                LoadAllPetList();
+                CleanViewFields();
+            }
+            catch (Exception ex)
+            {
+
+                view.IsSuccessful = false;
+                view.Message = ex.Message;
+            }
+        }
+
+        private void CleanViewFields()
+        {
+            view.PetId = "0";
+            view.PetName = "";
+            view.PetType = "";
+            view.PetColour = "";
         }
 
         private void DeleteSelectedPet(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var pet = (PetModel)petsBindingSource.Current;
+                repository.Delete(pet);
+                view.IsSuccessful = true;
+                view.Message = "Pet Deleted Successfully";
+                LoadAllPetList();
+            } catch (Exception ex)
+            {
+                view.IsSuccessful = false;
+                view.Message = "An error ocurred, could not delete pet";
+            }
         }
 
         private void LoadSelectedPetToEdit(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            var pet = (PetModel)petsBindingSource.Current;
+            view.PetId = pet.Id.ToString();
+            view.PetName = pet.Name.ToString();
+            view.PetType = pet.Type.ToString();
+            view.PetColour = pet.Type.ToString();
+            view.IsEdit = true;
         }
 
         private void AddPet(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            view.IsEdit = false;
         }
 
     }
